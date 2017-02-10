@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,mathpazo,framed, amsthm}
+\title{Discrete Math HW \#3}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\let\bicon\leftrightarrow
+\newcommand\tabsmall[1][0.2cm]{\hspace*{#1}}
+
+\author{Dor Rondel}
+
+% Enable SageTeX to run SageMath code right inside this LaTeX file.
+% documentation: http://mirrors.ctan.org/macros/latex/contrib/sagetex/sagetexpackage.pdf
+% \usepackage{sagetex}
+
+\begin{document}
+\maketitle
+\newpage
+Dor Rondel \\
+\begin{enumerate}
+  \setcounter{enumi}{14}
+  \item For the definition of continuity below: 1) write the second
+half of the definition using symbols, and 2) negate the statement.
+\begin{framed}
+A real valued function $f$ is continuous at $a$ if and only if
+for every $\epsilon >0$, there is a $\delta >0$ such that $|f(x)-f(a)|<\epsilon$, whenever $|x-a|< \delta$. \end{framed}
+  \newline
+  1. A real valued function $f$ is continuous at $a$ \iff $\forall \epsilon > 0 \exists \delta > 0$ such that $|f(x)-f(a)|<\epsilon$, whenever $|x-a|< \delta$. \\
+  \newline
+  2. A real valued function $f$ is continuous at $a$ and $\exists \epsilon > 0 \forall \delta > 0$ such that $|f(x)-f(a)|<\epsilon$, whenever $|x-a|> \delta$. \\
+\newpage
+Dor Rondel \\
+\item Show that given any rational number $x$, and any positive integer $k$, there exists an integer $y$ such that $x^k y$ is an integer. \\
+\newline
+A rational number is one that can be expressed in terms of a fraction. Take some arbitrary fraction $\frac{m}{n}$ to represent x, where m and n are both integers, if you raise the fraction by a positive integer k you'd get  $(\frac{m}{n})^k = \frac{m^k}{n^k}$. Any integer raised to the power of another positive integer is still an integer by extending the closure property of multiplication to exponentiation (since $x^y$ is $x$ multiplied by itself $y$ times), hence $m$ and $n$ are still integers. Given that, let $y$ equal the denominator raised to $k$, which in our case is $n^k$, $x^ky = \frac{m^k(n^k)}{n^k} = m^k$. This proves that given a rational number, raised to a positive integer, multiplied by the denominator raised to the same positive integer leaves you with just the numerator alone, which was already proven to be an integer, making the original statement true. \qed
+\newpage
+Dor Rondel \\
+\item Suppose $n$ is an odd integer. Prove that $n=4j+1$ for some integer $j$, or $n=4k+3$ for some integer $k$. \\
+\newline
+Let $n = 15$, which is an odd integer following the definition of $2z+1$ where $z = 7$. n can also be defined as $n=4k+3$ where $k=3$ such that $(4)(3)=12$ and $12+3=15=n$. Hence an odd integer n can be defined by the formula $n=4k+3$. \qed  
+\end{document}

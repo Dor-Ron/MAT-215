@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+\title{Homework 3}
+\author{Dr. Hanusch}  %Put your name on your paper.
+\date{February 6, 2017}
+
+\setlength{\parindent}{0mm}
+
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{framed}
+%\usepackage[shortlabels]{enumerate}
+
+\begin{document}
+
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{qu}[]{Question}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem*{prf}{Proof}
+\numberwithin{equation}{section}
+
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+
+% ----------------------------------------------------------------
+
+
+\maketitle
+
+\section{Read}
+
+Sections 3.1-3.3 and Sections 4.1-4.2 of Kwong. Complete the hands-on exercises.
+
+%% You can delete this section before typing up your turn-in homework%%
+\section{Boardwork}
+
+Due February 8, 2017.
+
+\begin{qu} Determine the truth value of each of the following propositions:
+\begin{enumerate}[label=\alph*)]
+\item For any prime number $x$, the number $x+1$ is composite.
+\item There exists a prime number $x$ such that the number $x+4$ is prime.
+\item For any real number $x$, if $x^2$ is an integer, then $x$ is also an integer.
+\item For any integer $x$, $x^2$ is also an integer.
+\item There exists integers $s$ and $t$ such that $1<s<t<187$ and $st=187$.
+\item For every integer $n$, there exists an integer $m$ such that $m>n^2$.
+\item For all $x \in \mathbb{Z}$, either $x$ is even, or $x$ is odd.
+\end{enumerate}
+\end{qu}
+
+\begin{qu} Find the negation (in simplest form) of each formula.
+\begin{enumerate}[label=\alph*)]
+\item $\forall x < 0 \forall y, z \in \mathbb{R} (y < z \implies xy < xz)$
+\item $\forall x \in \mathbb{Z} [ p(x) \lor q(x) ]$
+\item There exists a rational number $x$ such that for all integers $y$, either $p(x,y)$ or $r(x,y)$ is true.
+\item For all real numbers $x$ and $y$, if $x^3 +x -2=y^3+y-2$, then $x=y$.
+\end{enumerate}
+\end{qu}
+
+\begin{qu}
+Show that given any rational number $x$, there exits an integer $y$ such that $x^2y$ is an integer.
+\end{qu}
+
+\begin{qu}
+Show that, between any two rational numbers $a$ and $b$, where $a<b$, there exists another rational number. \end{qu}
+
+\begin{qu}
+Prove that the polynomial $x^{71}-4x^{44}+11x-3$ has a real root.
+\end{qu}
+
+
+
+
+\begin{qu}
+Prove that the sum of two even numbers is even.
+\end{qu}
+
+\begin{qu}
+Prove that if $m$ is even and $n$ is odd, then $mn$ is even.
+\end{qu}
+
+\begin{qu}
+Prove that for integers $a$, $b$ and $c$, if $a|b$ and $b|c$, then $a|c$.
+\end{qu}
+
+\begin{qu}
+Prove that if an integer $x$ is a multiple of 5, then the ones digit of the number is either 0 or 5.
+
+Hint: After you unpack what it means to be a multiple of 5, you are going to need two cases: a case for even and a case for odd.
+\end{qu}
+
+
+\begin{qu} Prove or disprove with a counterexample:\\
+For integers $a, b, c$ and $d$, if $a$ divides $b-c$ and $a$ divides $c-d$, then $a$ divides $b-d$.
+\end{qu}
+
+\begin{qu}
+If $(G, \ast)$ is a cyclic group, then $(G, \ast)$ is abelian.
+
+Write the first and last statements of the proofs in the following proof frameworks:
+\begin{enumerate}[label=\alph*)]
+\item For a direct proof.
+\item $\bigstar$ For a proof by contrapositive.
+\item $\bigstar$ For a proof by contradiction.
+\end{enumerate}
+\end{qu}
+
+\begin{qu} $\bigstar$
+Let $x$ and $y$ be two real numbers. Prove that if $x \ne 0$ and $y \ne 0$, then $xy \ne 0$.
+\end{qu}
+
+\begin{qu} $\bigstar$
+Prove that $\sqrt{3}$ is irrational.
+\end{qu}
+
+\begin{qu} $\bigstar$
+Prove that $n$ is odd if and only if $n^2$ is odd. \end{qu}
+
+\newpage
+\section{Turn-in}
+
+Due February 10, 2017.
+
+%% Stop deleting here.
+
+
+\begin{qu} For the definition of continuity below: 1) write the second half of the definition using symbols, and 2) negate the statement.
+
+\begin{framed}
+A real valued function $f$ is continuous at $a$ if and only if
+for every $\epsilon >0$, there is a $\delta >0$ such that $|f(x)-f(a)|<\epsilon$, whenever $|x-a|< \delta$. \end{framed}
+
+\end{qu}
+
+%Put your answer to the question here, without the comment.
+% \newpage
+% Make sure to put your name on the new page
+
+\begin{qu}
+Show that given any rational number $x$, and any positive integer $k$, there exits an integer $y$ such that $x^k y$ is an integer.
+\end{qu}
+
+\begin{qu}Suppose $n$ is an odd integer. Prove that $n=4j+1$ for some integer $j$, or $n=4k+3$ for some integer $k$.
+\end{qu}
+
+\end{document}

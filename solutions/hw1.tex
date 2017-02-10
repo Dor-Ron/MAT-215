@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage{amsmath,mathpazo}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\title{Discrete Math Homework \#1}
+\author{Dor Rondel}
+
+% Enable SageTeX to run SageMath code right inside this LaTeX file.
+% documentation: http://mirrors.ctan.org/macros/latex/contrib/sagetex/sagetexpackage.pdf
+% \usepackage{sagetex}
+
+\begin{document}
+\maketitle
+\newpage
+
+% Number 8
+\begin{enumerate}
+  \setcounter{enumi}{7}
+  \item What do you think is the purpose of you presenting your work,
+even if it’s not correct?
+
+Presenting your work has an inherit beneficial value, even if it is incorrect. For example, many scientists do not throw out wrong work, as something can still be learnt from it. Ironically, learning what not to do, is one way of learning what you are supposed to do. Going over the wrong steps and understanding why they're wrong is as valuable as learning how to do something correctly from the getgo. Additionally, I believe there's an added personal and social factor, as you'd be increasing your confidence through public presentations; as well as learning about your peers, which could potentially lead to friendships and will help you through the class. 
+
+
+\newpage
+
+By algebraically manipulating the left hand side of the equation, you can make it identical to the right hand side, thus proving the following equation.
+\newline
+% Number 9
+  \item Prove that, for any integer $k$, 
+$$ \frac{k(k+1)(k+2)(k+3)}{4} + (k+1)(k+2)(k+3) =\frac{(k+1)(k+2)(k+3)(k+4)}{4}$$
+\newline
+\textbf{Proof:} 
+\newline
+\begin{align*}
+   \frac{k(k+1)(k+2)(k+3)}{4} + (k+1)(k+2)(k+3) &= \frac{k(k+1)(k+2)(k+3)+4(k+1)(k+2)(k+3)}{4}\\
+                                                &= \frac{(k+1)(k+2)(k+3)[k+4]}{4}\\
+\end{align*}                                                
+\newline
+By factoring out the $$(k+1)(k+2)(k+3)$$ from both numerator terms after combining the two fractions, we see that the expression is equivalent to the right hand sign of the original equation. Thus the equation is in fact true.
+\newpage
+% Number 10
+  \item 
+  a) The integer $2^8-1$ is prime.
+  \newline
+  \newline
+  The preceding sentence is a proposition.
+  \newline
+  \newline
+  $2^8-1$ is equal to 255, which is divisible by 5, making it not prime. For this reason, the above sentence is false.
+  \newline
+  \newline
+  The integer $2^8-1$ is not prime.
+  \newline
+  \newline
+  \newline
+  \newline
+  b) There exists a real number x such that x > 5.
+  \newline
+  \newline
+  The preceding sentence is not a proposition.
+  \newline
+  \newline
+  The statement is true for values of x which are greater than 5, and false for values of x which are less than or equal to 5.
+  \newline
+  \newline
+  For any real number x such that $x \leq 5$.
+  \newline
+  \newline
+  \newline
+  \newline
+  c) For any real number $x$, $\frac{x}{x}=1$.
+  \newline
+  \newline
+  The preceding sentence is a proposition.
+  \newline
+  \newline
+  The statement is true because any real number divided by itself is 1.
+  \newline
+  \newline
+  There exists a real number $x$, $\frac{x}{x}\neq1$.
+\end{enumerate}
+
+\end{document}

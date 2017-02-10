@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,mathpazo}
+\title{Discrete Math HW \#2}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\let\bicon\leftrightarrow
+\newcommand\tabsmall[1][0.2cm]{\hspace*{#1}}
+
+\author{Dor Rondel}
+
+% Enable SageTeX to run SageMath code right inside this LaTeX file.
+% documentation: http://mirrors.ctan.org/macros/latex/contrib/sagetex/sagetexpackage.pdf
+% \usepackage{sagetex}
+
+\begin{document}
+\maketitle
+\newpage
+Dor Rondel \\
+\begin{enumerate}
+  \setcounter{enumi}{9}
+  \item 
+     a) $(p\land q) \implies (q \lor r)$ is false.
+     \tab b) $(q \land r) \implies (p \land q)$ is false.
+     \newline \\
+     a) The value of p could not be determined for the implication to              evaluate as false. For an implication to be false, the hypothesis            needs to be true and the conclusion needs to be false. For the              hypothesis to be true, both p and q must be true since they are              expressed using a conjunction. However, given that both p and q are          true, the conclusion's disjunction would evaluate to true as well, as        $(q \lor r)$ when q is true evaluates to true. Hence $(p\land q)             \implies (q \lor r)$ is a tautology which is true for all values of         p, q, and r and cannot evaluate to false - thus the question is             unanswerable.
+    \newline \\
+    b) p must be false for $(q \land r) \implies (p \land q)$ to evaluate to     false. This is because for an implication to evaluate to false, the         hypothesis must be true and the conclusion must be false. To make the       hypothesis true, both q and r which are operated on by a conjunction         must be true. So for the conclusions conjunction to be false (and for       the implication as a whole to be false), p must be false to get the         expression into a $T \implies F$ format.  
+\newpage
+Dor Rondel \\
+    \item Answer each of the following tasks:
+    \begin{enumerate}
+    \item Find the contrapositive of the following implication: \\
+     If $x^2$ is an even integer, then $x$ is an even integer. 
+     \item Write the biconditional as two implications: \\
+     A right triangle with legs $a$ and $b$ and hypotenuse $c$ exists if and     only if $a^2+b^2=c^2$.
+    \end{enumerate}
+    \newline \\ \\
+    a) The contrapositive statement would be: If x is not an even integer, then $x^2$ is not an even integer. 
+    \newline \\
+    b) If $a^2 + b^2 = c^2$ then a right triangle with legs a, b, and           hypotenuse c exists. \\
+    \newline 
+    If a right triangle with legs a, b, and hypotenuse c exists, then $a^2 +     b^2 = c^2$
+\newpage
+Dor Rondel \\
+    \item Determine whether formulas $u$ and $v$ are logically equivalent         (you may use an argument, a truth table or properties of logical             equivalences).
+    Determine whether formulas $u$ and $v$ are logically equivalent (you may use an argument, a truth table or properties of logical equivalences).
+\begin{align*}
+ (a) \tabsmall u: (p \implies q) \land (p \implies \overline{q}) \tab & v: \overline{p} \\
+ (b)  \tabsmall u: p \implies q \tab                                  & v: q \implies p \\
+ (c) \tabsmall u: (p \implies q) \implies r\tab                       & v: p \implies (q \implies r) \\
+ (d) \tabsmall u: p \implies (q \lor r) \tab                          & v: (p \implies q) \lor (p \implies r) \\
+ (e) \tabsmall u: \overline{p \iff q}\tab                             & v: \overline{p} \iff \overline{q} \\
+\end{align*} 
+a) \\
+\newline
+To prove that the left expression is logically equivalent to the right expression, we algebraically manipulate the left expression to look identical to the right expression. \\
+\begin{align*}
+(p \implies q) \land (p \implies \overline{q}) &\equiv (\overline{p} \tabsmall \lor  \tabsmall q) \tabsmall \land \tabsmall (\overline{p} \tabsmall \land \tabsmall q) \tab implication \tabsmall as \tabsmall disjunction \\
+                                                  &\equiv \overline{p} \lor (q \land \overline{q}) \tab \tab \tab distributivity \\
+                                                  &\equiv \overline{p} \tab \tab \tab \tab \tabsmall \tabsmall inverse \tabsmall laws
+\end{align*}
+\newline 
+As can be seen both sides can be manipulated to equal $\overline{p}$ and are thus equivalent in all aspects. \\
+\newline
+b) \\
+\newline
+A truth table will be usde to show that u is equvivalent to v.
+\begin{table}[h!]
+\centering
+ \begin{tabular}{||c c c c c c||} 
+ \hline
+ p & \overline{p} & q & \overline{q} & p \implies q & q \implies p \\ [0.5ex] 
+ \hline\hline
+ T & T & F & F & T & F \\ 
+ T & F & F & T & F & T \\ 
+ F & T & T & F & T & T \\ 
+ F & F & T & T & T & T \\ [1ex] 
+ \hline
+ \end{tabular}
+\end{table}
+\newpage
+Dor Rondel \\ \\
+c) 
+\begin{table}[h!]
+\centering
+ \begin{tabular}{||c c c c c c c||} 
+ \hline
+ p & q & r & p \implies q  & q \implies r & (p \implies q) \implies r & p \implies (q \implies r) \\ [0.5ex] 
+ \hline\hline
+ T & T & T & T & T & T & T\\ 
+ T & T & F & T & F & F & F\\
+ T & F & T & F & T & T & T\\ 
+ T & F & F & F & T & T & T\\ 
+ F & T & T & T & T & T & T\\ 
+ F & T & F & T & F & F & T\\ 
+ F & F & T & T & T & T & T\\ 
+ F & F & F & T & T & F & T\\ [1ex]
+ \hline
+ \end{tabular}
+\end{table}
+\newline
+d) \\
+\newline
+To prove that the left expression is logically equivalent to the right expression, we algebraically manipulate both expressions starting with the left one followed by the right one. \\
+\begin{align*}
+\newline
+p \implies (q \lor r) &\equiv \overline{p} \lor q \lor r \tab \tab \tab implication \tabsmall as \tabsmall disjunction \\ \\
+   (p \implies q) \lor (p \implies r) &\equiv \overline{p} \lor q \lor \overline{p} \lor r \tab \tab \tabsmall implication \tabsmall as \tabsmall disjunction \\
+                                      &\equiv \overline{p} \lor q \lor r \tab \tab \tab Idempotent \tabsmall Laws \\
+\end{align*}
+\newline 
+As can be seen both sides can be manipulated to equal $\overline{p}$ and are thus equivalent in all aspects. \\ \\
+\newline
+e) \\ \\
+A truth table will be usde to show that u is equvivalent to v.
+\begin{table}[h!]
+\centering
+ \begin{tabular}{||c c c c c c||} 
+ \hline
+ p & \overline{p} & q & \overline{q} & \overline{p \bicon q} & \overline{q} \bicon \overline{p} \\ [0.5ex] 
+ \hline\hline
+ T & F & T & F & F & T \\ 
+ T & F & F & T & T & F \\ 
+ F & T & T & F & T & F \\ 
+ F & T & F & T & F & T \\ [1ex] 
+ \hline
+ \end{tabular}
+\end{table}
+\end{enumerate}
+\end{document}

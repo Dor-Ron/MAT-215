@@ -1,0 +1,212 @@
+\documentclass[12pt]{article}
+\title{Homework 2}
+\author{Dr. Hanusch}  %Put your name on your paper.
+\date{January 30, 2017}
+
+\setlength{\parindent}{0mm}
+
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+%\usepackage[shortlabels]{enumerate}
+
+\begin{document}
+
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{qu}[]{Question}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{prf}[]{Proof}
+\numberwithin{equation}{section}
+
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+
+% ----------------------------------------------------------------
+
+
+\maketitle
+
+\section{Read}
+
+Chapter 2 and Sections 3.1-3.3 of Kwong. Complete the hands-on exercises.
+
+%% You can delete this section before typing up your turn-in homework%%
+\section{Boardwork}
+
+Due February 1, 2017.
+For Questions 1-2, let $p$, $q$ and $r$ represent the following statements:
+
+\begin{center}\begin{tabular}{rl}
+$p$: & Sam had pizza last night.\\
+$q$: & Charlotte finished her homework. \\
+$r$: & Patricia checked Facebook this morning.
+\end{tabular} \end{center}
+
+\begin{qu}
+Give a formula (using appropriate symbols) for each of these statements:
+\begin{enumerate}[label=\alph*)]
+\item Sam had pizza last night and Charlotte finished her homework.
+\item Charlotte finished her homework or Patricia did not check Facebook this morning.
+\item If Sam has pizza last night, then Patricia checked Facebook this morning.
+\item Sam did not have pizza last night and Patricia did not check Facebook this morning, but Charlotte did finish her homework.
+\item Charlotte finished her homework, unless Sam had pizza last night.
+\end{enumerate}
+\end{qu}
+
+\begin{qu}
+Express in words the statements represented by the following symbols:
+
+\NumTabs{3}
+\begin{inparaenum}[a)]
+\item $p \lor q$
+\tab \item $p \land r$
+\tab \item $(\overline{p} \lor \overline{q}) \land r$
+\tab \item $ (p \lor q) \land \overline{p \land q}$
+\tab \item $q \implies r$
+\tab \item $\overline{p} \implies q$
+\tab \item $p \iff r$
+\tab \item $\overline{p} \iff (q \lor r)$
+\tab \item $r \iff \overline{ (p \lor q)}$
+\end{inparaenum}
+
+\end{qu}
+
+
+
+\begin{qu} Consider the following statements:
+\begin{center}\begin{tabular}{rl}
+$p$:  & Niagara Falls is in New York. \\
+$q$:  & New York City is the state capital of New York. \\
+$r$:  & New York City will have more than 40 inches of snow in 2525.
+\end{tabular} \end{center}
+
+The statement $p$ is true, and the statement $q$ is false. Represent each of the following statements by a logical expression. What is their truth value if $r$ is true? What if $r$ is false?
+
+\begin{enumerate}[label=\alph*)]
+\item Niagara Falls in in New York only if New York City will have more than 40 inches of snow in 2525.
+\item For New York City to be the state capital of New York, it is necessary that New York City will have more than 40 inches of snow in 2525.
+\item For Niagara Falls to be in New York or for New York City to be the state capital of New York, it is sufficient that New York City will have more than 40 inches of snow in 2525.
+\item Niagara Falls is in New York if and only if New York City is the state capital of New York.
+\item Niagara Falls in in New York and New York City is the state capital of New York is necessary and sufficient for New York City to have 40 inches of snow in 2525.
+\end{enumerate}
+\end{qu}
+
+
+\begin{qu}Negate the following statements in a useful manner:
+\begin{enumerate}[label=\alph*)]
+\item $x$ is an integer less than $9$
+\item $5<x<8$
+\item If $x$ is prime, then $x^2$ is prime.
+\end{enumerate} \end{qu}
+
+\begin{qu}
+Construct the truth tables for the following logical expressions:
+
+\NumTabs{2}
+\begin{inparaenum}[a)]
+\item $p \lor \overline{q}$
+\tab \item $\overline{p \land q}\lor r$
+\tab \item $(p \lor q) \implies r$
+\tab \item $(p \implies q) \land (\overline{p} \implies q)$
+\end{inparaenum}
+
+\end{qu}
+
+\begin{qu}
+Rewrite the following statements using ``if'', ``then'' language. Then find the converse, inverse and contrapositive of the following implication.
+\begin{enumerate}[label=\alph*)]
+\item Any parallelogram, $ABCD$, is also a rectangle.
+\item The Dolphins will not make the playoffs, unless the Bears lose all the rest of their games.
+\item An integer is divisible by $6$, whenever the integer is divisible by $2$ and by $3$.
+\end{enumerate}
+\end{qu}
+
+\begin{qu}
+Prove that the following statements are logical equivalences.
+\begin{enumerate}[label=\alph*)]
+\item $(p \lor q) \lor r \equiv p \lor (q \lor r)$
+\item $(p \land q) \land r \equiv p \land (q \land r)$
+\item $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$
+\item $(p \land q) \implies r \equiv p \implies (\overline{q} \lor r)$
+\item $(p \implies \overline{q}) \land (p \implies \overline{r})
+		\equiv \overline{p \land (q \lor r)}$
+\end{enumerate}
+\end{qu}
+
+\begin{qu} Determine whether the following are true or false
+\begin{enumerate}[label=\alph*)]
+\item $(p \implies q) \lor (p \implies \overline{q}) \equiv \overline{p}$
+\item $p \implies (q \land r) \equiv (p \implies q) \land (p \implies r)$
+\end{enumerate}
+\end{qu}
+
+\begin{qu}
+Determine whether the following formulas are tautologies, contradictions, or neither:
+\begin{enumerate}[label=\alph*)]
+\item $(p \implies q) \land \overline{p}$
+\item $(p \implies \overline{q}) \land ( p \land q)$
+\item $(p \implies \overline{q}) \land q$
+\end{enumerate}
+\end{qu}
+\section{Turn-in}
+
+Due February 3, 2017.
+
+%% Stop deleting here.
+
+
+\begin{qu} Determine the truth value of $p$ if
+
+\NumTabs{2}
+\begin{inparaenum}[a)]
+\item $(p\land q) \implies (q \lor r)$ is false.
+\tab \item $(q \land r) \implies (p \land q)$ is false.
+\end{inparaenum}\end{qu}
+
+%Put your answer to the question here, without the comment.
+% \newpage
+% Make sure to put your name on the new page
+
+\begin{qu} Answer each of the following tasks:
+\begin{enumerate}[label=\alph*)]
+\item Find the contrapositive of the following implication: \\
+ If $x^2$ is an even integer, then $x$ is an even integer.
+ \item Write the biconditional as two implications: \\
+ A right triangle with legs $a$ and $b$ and hypotenuse $c$ exists if and only if $a^2+b^2=c^2$.
+\end{enumerate}
+\end{qu}
+
+\begin{qu}
+Determine whether formulas $u$ and $v$ are logically equivalent (you may use an argument, a truth table or properties of logical equivalences).
+\begin{enumerate} [label=\alph*)]
+\item $u: (p \implies q) \land (p \implies \overline{q})$ \tab $v: \overline{p}$
+\item $u: p \implies q$ \tab $v: q \implies p$
+\item $u: (p \implies q) \implies r$ \tab $v: p \implies (q \implies r)$
+\item $u: p \implies (q \lor r) $ \tab $v: (p \implies q) \lor (p \implies r)$
+\item $u: \overline{p \iff q}$ \tab $v: \overline{p} \iff \overline{q}$
+\end{enumerate}
+\end{qu}
+
+
+\end{document}
