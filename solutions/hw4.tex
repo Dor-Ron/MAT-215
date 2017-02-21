@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, mathpazo,framed, amsthm, amssymb}
+\title{Discrete Math HW \#4}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\let\bicon\leftrightarrow
+\newcommand\tabsmall[1][0.2cm]{\hspace*{#1}}
+
+\author{Dor Rondel}
+
+% Enable SageTeX to run SageMath code right inside this LaTeX file.
+% documentation: http://mirrors.ctan.org/macros/latex/contrib/sagetex/sagetexpackage.pdf
+% \usepackage{sagetex}
+
+\begin{document}
+\maketitle
+\newpage
+Dor Rondel \\
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item Prove or disprove with a counterexample the following statement:
+If the sum of two positive prime numbers is prime, then one of the prime
+addends must be 2. \\
+  \newline
+  Proof: By definition, all prime numbers except for 2 are odd, since if they were even, they would be divisible by 2, and would not be prime. Therefore, assume that $x$ and $y$ are prime numbers > 2 which are odd. $x$ and $y$ could be expressed as $2k+1$ for some integer $k \in \mathbb{N}$ where $0 \notin \mathbb{N}$ (Since $1$ is not prime). $2k$ is even because 2 multiplied by a natural number is always even. Since $x$ and $y$ are odd, $x+y$ could be rewritten as: $$(2k_1+1) + (2k_2+1)$$ We've already established that $2k_1$ and $2k_2$ are even since they're a multiple of 2. Since addition is commutative, the above expression could be rewritten as: $$(2k_1 + 2k_2) + 1 + 1$$ The sum of any two even numbers is even, in our case, $2(k_1 + k_2) = (2k_1 + 2k_2)$, so the sum of $k_1 + k_2$ multiplied by 2 is even for reasons stated above. Hence: $$2(k_1 + k_2) + 1 + 1 = 2(k_1 + k_2) + 2$$ is even as addition between odd numbers will always results in an even sum. For that reason, the sum of two prime integers where one of the integers is not 2 cannot be prime. However, if one of the integers were 2, a prime sum would be producible, an example being: $2+3=5$ where both addends are prime as well as the sum. \qed
+\newpage
+Dor Rondel \\
+  \item Let $P$ be the set of Pythagorean triples; that is,
+$$ P=(a,b,c) | a,b,c \in \mathbb{Z} \textrm{ and } a^2+b^2=c^2$$
+and let $T$ be the set
+$$ T =(p, q, r) | p=x^2-y^2, q=2xy, \textrm{ and } r=x^2+y^2 \textrm{ where } x, y \in \mathbb{Z}.$$
+Prove that $T \subseteq P$. \\
+\newline
+Proof: For $T \subseteq P$ to be true, the implication $\forall (p, q, r) \in T \implies \forall (p, q, r) \in P$ must be true. For the implication to be true, $\forall (p, q, r) \in T$ must equal $\forall (a, b, c) \in P$. We're told the relationship between $a$, $b$, $c$ is $a^2+b^2=c^2$, thus the relationship between $p$, $q$, $r$ must also be $p^2+q^2=r^2$ for $T$ to be a subset of $P$. Substituting the equations from the prompt starting with the left hand side: \\
+\begin{align*}
+p^2 + q^2 \smalltab &= \smalltab r^2 \\
+(x^2-y^2)^2 + (2xy)^2 &=  \\
+(x^4-2x^2y^2+y^4) + 4x^2y^2 &= \\
+x^4 + 2x^2y^2 + y^4 &= \\
+\end{align*}
+Followed by the right hand side: 
+\begin{align*}
+(x^2 + y^2) \smalltab &= \smalltab r^2 \\
+x^4 + 2x^2y^2 + y^4 &=  \\
+\end{align*}
+As can be seen, $p^2 + q^2 = r^2$ is in fact true since the manipulated expressions on both the left and right side of the equation are identical. Therefore, the triplet (p, q, r), is also a pythagorean triplet proving that $\forall (p, q, r) \in T \implies \forall (p, q, r) \in P$ and that $T \subseteq P$ is in fact true. \qed
+\end{enumerate}
+\newpage
+Dor Rondel \\
+\newline
+16. Show that given any rational number $x$, and any positive integer $k$, there exists an integer $y$ such that $x^k y$ is an integer. \\
+\newline
+Proof: A rational number is one that can be expressed in terms of a fraction. Let x be some arbitrary number represented as $\frac{m}{n}$, where $m, n \in \mathbb{N}$ and are not further reducible. If you raise the fraction by a positive integer $k$ you'd get  $(\frac{m}{n})^k = \frac{m^k}{n^k}$. Since $k$ is a positive integer, and $m$ is an integer, $m^k$ is equivalent to $(m)(m)...(m)$ $k$ times, and $m$ is still an integer as integers are closed under multiplication. The same can be said for $n$, substituting $n$ for $m$ in the previous sentence. Hence $m$ and $n$ are still integers. Given that, let $y$ equal the denominator raised to $k$, which in our case is $n^k$, $x^ky = \frac{m^k(n^k)}{n^k} = m^k$. This proves that given a rational number, raised to a positive integer, multiplied by the denominator raised to the same positive integer -- leaves you with just the numerator alone, which was already proven to be an integer, making the original statement true. \qed
+\end{document}

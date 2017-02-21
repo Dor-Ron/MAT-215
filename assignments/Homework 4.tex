@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+\title{Homework 4}
+\author{Dr. Hanusch}  %Put your name on your paper.
+\date{February 13, 2017}
+
+\setlength{\parindent}{0mm}
+
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{framed}
+%\usepackage[shortlabels]{enumerate}
+
+\begin{document}
+
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{qu}[]{Question}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem*{prf}{Proof}
+\numberwithin{equation}{section}
+
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+
+
+% ----------------------------------------------------------------
+
+
+\maketitle
+
+\section{Read}
+
+Sections 4.1-4.4 of Kwong. Complete the hands-on exercises.
+
+%% You can delete this section before typing up your turn-in homework%%
+\section{Boardwork} 
+
+Due February 15, 2017.
+
+\begin{qu}
+If $(G, \ast)$ is a cyclic group, then $(G, \ast)$ is abelian. 
+
+Write the first and last statements of the proofs in the following proof frameworks:
+\begin{enumerate}[label=\alph*)]
+\item For a direct proof.
+\item For a proof by contrapositive.
+\item For a proof by contradiction.
+\end{enumerate}
+\end{qu}
+
+\begin{qu} 
+Let $p$ be a prime integer. Prove that if $p|a^2$, then $p|a$.
+\end{qu}
+
+\begin{qu} 
+Let $x$ and $y$ be two real numbers. Prove that if $x \ne 0$ and $y \ne 0$, then $xy \ne 0$.
+\end{qu}
+
+\begin{qu} 
+Prove that $\sqrt{7}$ is irrational.
+\end{qu}
+
+\begin{qu} 
+Prove that $n^2$ is a multiple of 3 if and only if $n$ is a multiple of 3. \end{qu}
+
+
+\begin{qu} Prove or disprove with a counterexample:\\
+For integers $a, b$ and $c$, if $a|(bc)$, then $a|b$ or $a|c$. 
+\end{qu}
+
+\begin{qu}
+Answer each of the following:
+\begin{enumerate}[label=\alph*)]
+\item Use the roster method to describe $$\set{x\in \mathbb{N}\: | \: x<20 \textrm{ and } x \textrm{ is a multiple of }3 \textrm{ or a multiple of} 5}$$ 
+\item Use the roster method to describe $$\set{x\in \mathbb{Z}\: | \: |x|<20 \textrm{ and } x \textrm{ is a multiple of }3\textrm{, but not a multiple of } 5}$$ 
+\item Use set-builder notation to describe $$\set{ 0, 4, 8, 12, \dots }$$
+\item Describe the set in the previous problem as $S^+$, $S^-$, $bS$ or $a+bS$ for some appropriate set $S$.
+\end{enumerate}
+\end{qu}
+
+\begin{qu}
+Determine which of the following statements are true, and which are false. Justify your choice.
+
+\NumTabs{3}
+\begin{inparaenum}[a)]
+\item $a \in {a}$
+\tab\item  $\emptyset \in \emptyset$
+\tab\item $2 \in (2,7)$
+\tab\item $\sqrt{5} \in (1,3)$
+\tab\item $|\set{-3, -2, 2, 3}|=4$
+\tab\item $|\set{x\in \mathbb{Q} | x^2=3 }|=2$
+\end{inparaenum}
+\end{qu}
+
+\begin{qu}
+Determine whether the following statements are correct or incorrect \emph{syntactically}. For those that are syntactically correct, determine their truth values; for those that are syntactically incorrect, suggest ways to fix them.
+\begin{enumerate}[label=\alph*)]
+\item $(3,7]=3<x\leq 7$.
+\item $\set{ x \in \mathbb{R} | x^2<0}\equiv \emptyset $.
+\item $\frac{7}{4} \in [2, \sqrt{7})$.
+\item If $(0, \infty)$, then $x$ is positive.
+\item $5 \subseteq (0, 6]$.
+\end{enumerate}
+\end{qu}
+
+\begin{qu}
+For each of the following statements about sets $A$, $B$, and $C$, either prove the statement is true or give a counterexample to show that it is false.
+\begin{enumerate}[label=\alph*)]
+\item If $A\subseteq B$ and $B\subseteq C$, then $A \subseteq C$.
+\item If $A \in B$ and $B \subseteq C$, then $A \subseteq C$.
+\item If $A \in B$ and $B \in C$, then $A \in C$.
+\end{enumerate}
+\end{qu}
+
+\newpage
+\section{Turn-in} 
+
+Due February 17, 2017.
+
+%% Stop deleting here.
+
+
+\begin{qu}
+Prove or disprove with a counterexample the following statement: \\
+If the sum of two positive prime numbers is prime, then one of the prime addends must be 2.
+\end{qu}
+
+%Put your answer to the question here, without the comment.
+% \newpage 
+% Make sure to put your name on the new page
+
+\begin{qu}
+Let $P$ be the set of Pythagorean triples; that is,
+$$ P=\set{ (a,b,c) | a,b,c \in \mathbb{Z} \textrm{ and } a^2+b^2=c^2 } $$
+
+and let $T$ be the set
+$$ T = \set{ (p, q, r) | p=x^2-y^2, q=2xy, \textrm{ and } r=x^2+y^2 \textrm{ where } x, y \in \mathbb{Z} }.$$
+
+Prove that $T \subseteq P$.
+\end{qu}
+
+\begin{qu}
+Read the comments from homework 3 turn-in. Rewrite either Question 16 or Question 17, incorporating the comments. Choose which ever question needed the most revision. Staple the original (with my comments) behind your rewrite.
+\end{qu}
+
+\end{document}
