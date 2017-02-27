@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, mathpazo,framed, amsthm, amssymb}
+\title{Discrete Math HW \#5}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\let\bicon\leftrightarrow
+\newcommand\tabsmall[1][0.2cm]{\hspace*{#1}}
+
+\author{Dor Rondel}
+
+% Enable SageTeX to run SageMath code right inside this LaTeX file.
+% documentation: http://mirrors.ctan.org/macros/latex/contrib/sagetex/sagetexpackage.pdf
+% \usepackage{sagetex}
+
+\begin{document}
+\maketitle
+\newpage
+Dor Rondel \\
+\begin{enumerate}
+  \setcounter{enumi}{11}
+  \item Let $A$ and $B$ be sets in a universe $U$.
+Prove or disprove: $A \cup B = A\cap B$ if and only if $A=B$.
+   \newline \\
+   Proof: Since the prompt is a biconditional, we must prove both implications alone. We will do this following the direct proof method. \\
+   \newline
+   Assume $A \cup B = A\cap B$, elaborating on both sides of the equation:      $A \cup B$ means that $(x \in A) \lor (x \in B)$ for any element $x$ in $U$. As for the other expression, $A\cap B$ means that $(x \in A) \land (x \in B)$ for any element $x$ in $U$. Effectively this means that every element in the union of sets $A$ and $B$ is an element of $A$ and $B$ on their own respectively. Since we know that $\forall x(x \in A
+ \land x \in B)$, by definition $A \subseteq B$ and $B \subseteq A$; therefore, $A=B$.
+ \newline \\
+ Now Assume $A=B$, if that's true, that means $\forall x(x \in A
+ \land x \in B)$. Since every element of $A$ is also an element of $B$, the union of the two, $A \cup B$ is really the same just $A$ and $B$ on their own, since we don't count elements twice in sets. Similaraly, if we were to take the intersection of $A$ and $B$, $A \cap B$, that set would equal just $A$ or $B$ on their own, since we don't count the same elements twice. Therefore, $A=B \implies A \cup B = A\cap B$ \\
+ \newline
+ Since $A=B \implies A \cup B = A\cap B$ and $A \cup B = A\cap B \implies A=B$, the biconditional $A \cup B = A\cap B \iff A=B$ is true. \qed
+ %New Question%
+ \newpage
+Dor Rondel \\
+      \item Let $A$, $B$ and $C$ be sets in a universe $U$. Prove or disprove that:
+    \begin{enumerate}
+        \item $A-B=A\cap \overline{B}$
+        \item $A-(B-C)=A\cap (\overline{B} \cup C)$
+        \item $A-(B-C)=(A-B)-C$
+    \end{enumerate} \\
+    \newline
+    (a) $A-B$ is the same as saying $\forall x \in U(x \in A \land x \notin B)$ otherwise known as $A$'s relative complement. That's the same as saying $A\cap \overline{B}$ which means that $\forall x \in U(x \in A \land x \notin U-B)$, otherwise known as $A$'s complement. The relative complement is the same as the intersection of the actual set with the regular complement because, $A \and U-B = A$, and if you substitute that to the definition of $A$'s complement defined above it would be exactly identical to the definition of $A$'s relative complement; hence, $A-B=A\cap \overline{B}$ is in fact true. \qed \\
+    \newline
+    (b) $A-(B-C)$ is the same as saying $\forall x \in U(x \in A \land (x \in B \land x \notin C)$. Breaking it down further, $x \in A$ and $x$ is not in the set of elements which are in $B$ but not in $C$. As for, $A\cap (\overline{B} \cup C)$, that means that that $\forall x \in U(x \in A \land (x \notin B \lor x \in C))$. $(x \in B \land x \notin C)$ is logically equivalent to $B \land \overline{C}$. And $(x \notin B \lor x \in C)$ is logically equivalent to $\overline{B} \lor C$. $$B \land \overline{C} = \overline{B} \lor C \tab\tab\tab DeMorgan$$ Therefore, the membership requirement for the L.H.S. is logically equivalent to the membership requirement for the R.H.S. and the elements of both sets are equivalent, so $A-(B-C)=A\cap (\overline{B} \cup C)$ \qed \\
+    \newline
+    (c) Let $A$ = \{1,2,3,4\}, $B$ = \{3,4,5\}, and $C$ = \{4,9\}. $B-C$ = \{3,5\}. $A$ - \{3,5\} = \{1,2,4\}. As for the R.H.S. expression, $A-B$ = \{1,2\} and \{1,2\} - $C$ = \{1,2\}. $\{1,2,4\} \nsubseteq \{1,2\}$. Therefore, $A-(B-C)\neq(A-B)-C$ proven by counter-example. \qed
+ %New Question%
+ \newpage
+Dor Rondel \\
+      \item Let $U$ be a universal set. Let $A_i \subseteq U$ be a family of sets with $i \in I$ for some index set $I$.
+    \begin{enumerate}
+        \item Suppose $B \subseteq A_i$ for every $i \in I$. Prove that $B           \subseteq \bigcap_{i \in I} A_i$.
+        \item Suppose $A_i \subseteq D$ for every $i \in I$. Prove that             $\bigcup_{i \in I} A_i \subseteq D$. 
+    \end{enumerate} \\
+    \newline
+    (a) If $B \subseteq A_i$ for every $i \in I$ that means that all the elements of $B$ are in each $A_i$ for all values of $i$. If you were to take the intersection of $A_i$ and $A_i_2$ (assuming $i_2$ is the next index), both of which contain $B$ individually, $B$ would still be present in their intersection. The same can be said for the intersection of all $A_i$ for every $i \in I$, since we're told the $B \subseteq A_i$. Therefore, $B           \subseteq \bigcap_{i \in I} A_i$ is true because an intersection of sets containing the same set of elements will always contain that same set of elements. \qed \\
+    \newline
+    (b) Assume $A_i \subseteq D$ for every $i \in I$, that means that for any set generated, $A$, from the index set $I$, denoted $A_i$,  will be present in a larger set $D$. Taking the union of two sets we assume are present in a larger set named $D$, will still be in the encapsulating set after they're joined, as they both were in there to begin with. Following that logic, $\bigcup_{i \in I} A_i \subseteq D$ will always be true since every possible $A_i$ is already in $D$, so their union will still be in $D$ as well. \qed
+ \end{enumerate}
+\end{document}

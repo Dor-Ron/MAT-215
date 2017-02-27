@@ -1,0 +1,210 @@
+\documentclass[12pt]{article}
+\title{Homework 5}
+\author{Dr. Hanusch}  %Put your name on your paper.
+\date{February 20, 2017}
+
+\setlength{\parindent}{0mm}
+
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{framed}
+\usepackage{mathrsfs}
+%\usepackage[shortlabels]{enumerate}
+
+\begin{document}
+
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{qu}[]{Question}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem*{prf}{Proof}
+\numberwithin{equation}{section}
+
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\Zee}{\mathbb Z}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\power}{\mathscr{P}}
+
+
+% ----------------------------------------------------------------
+
+
+\maketitle
+
+\section{Read}
+
+Sections 4.3-4.5 and 3.4-3.6 of Kwong. Complete the hands-on exercises.
+
+%% You can delete this section before typing up your turn-in homework%%
+\section{Boardwork} 
+
+Due February 22, 2017.
+
+%\begin{qu}
+%\NumTabs{3}
+%\begin{inparaenum}[a)]
+%\item $a \in {a}$
+%\tab\item  $\emptyset \in \emptyset$
+%\tab\item $2 \in (2,7)$
+%\tab\item $\sqrt{5} \in (1,3)$
+%\tab\item $|\set{-3, -2, 2, 3}|=4$
+%\tab\item $|\set{x\in \mathbb{Q} | x^2=3 }|=2$
+%\end{inparaenum}
+%\end{qu}
+
+\begin{qu}
+Let $\U = \Zee$,  $A=2\Zee$, $B=3\Zee$, $C=4\Zee$ and $D=6\Zee$.
+Describe the following sets.
+
+\NumTabs{2}
+\begin{inparaenum}[a)]
+\item $A \cap B$
+\tab \item $A \cap C$
+\tab \item $A \cup D$
+\tab \item $C-A$
+\tab \item $A-C$
+\tab \item $A\cap \overline{B}$
+\tab \item $(A\cap B)\cup C $
+\tab \item $(A \cup B)-D$
+\end{inparaenum}
+\end{qu}
+
+\begin{qu}
+Let $X=\set{-2, 2}$, $Y=\set{0, 4}$, and $Z=\set{-3, 0, 3}$.
+Find
+
+\NumTabs{2}
+\begin{inparaenum}[a)]
+\item $X \times Y$ 
+\tab \item $X \times X$
+\tab \item $X \times Y \times Z$
+\tab \item $Y \cap Z$
+\tab \item $|Y\cup Z|$
+\tab \item $|X \times Y \times Z \times X|$
+\end{inparaenum}
+
+Hint: For the last two, you should \underline{not} list the elements of the set before computing the cardinality.
+
+\end{qu}
+
+\begin{qu} 
+Prove DeMorgan's laws for sets.
+\begin{enumerate}[label=\alph*)]
+\item $ \overline{A\cup B} = \overline{A} \cap \overline{B}$
+\item $\overline{A \cap B} = \overline{A} \cup \overline{B}$
+\end{enumerate}
+\end{qu}
+
+
+\begin{qu} 
+Prove the associative properties for sets.
+\begin{enumerate}[label=\alph*)]
+\item $ (A\cup B)\cup C = A \cup (B \cup C)$
+\item $(A \cap B) \cap C = A \cap (B \cap C)$
+\end{enumerate}
+\end{qu}
+
+
+
+\begin{qu}
+For any two sets $A$ and $B$, we have $A \subseteq B \iff \overline{B} \subseteq \overline{A}$.
+\end{qu}
+
+\begin{qu}
+Let $A$, $B$ and $C$ be sets in a universe $\U$. Prove that if $A \subseteq C$ and $B \subseteq C$, then $A\cup B \subseteq C$.
+\end{qu}
+
+\begin{qu}
+Prove or disprove each of the following statements about arbitrary sets $A$ and $B$. 
+\begin{enumerate}[label=\alph*)]
+\item $\power(A\cap B)=\power(A) \cap \power(B)$
+\item $\power(A\cup B)=\power(A) \cup \power(B)$
+\item $\power(A-B) = \power(A) - \power(B)$
+\end{enumerate}
+\end{qu}
+
+\begin{qu}
+Find $\set{a, b, c} \times \power(\set{d})$.
+\end{qu}
+
+\begin{qu}
+Let $A$, $B$ and $C$ be sets. Prove that if $A \subseteq B$, then $A\times C \subseteq B \times C$.
+\end{qu}
+
+\begin{qu}
+Let $A_n=[-n, 1+1/n)$ and $B_n=\left(\frac{n-1}{n}, \frac{n+1}{n}\right)$. 
+\begin{enumerate}[label=\alph*)]
+\item Determine $\bigcup_{n=1}^{\infty} A_n$.
+\item Determine $\bigcap_{n=1}^{\infty} A_n$.
+\item Prove or disprove that $\bigcap_{n \in \mathbb{N}} B_n =\set{1}$.
+\end{enumerate}
+\end{qu}
+
+
+
+\begin{qu}
+Let $\U$ be a universal set. Let $A_i \subseteq \U$ be a family of sets with $i \in I$ for some index set $I$, and let $B \subseteq \U$ be another set. For each statement, either prove the statement or give a counterexample.
+\begin{enumerate}[label=\alph*)]
+\item $$B \cup \left( \bigcap_{i \in I} A_i \right) =  \bigcap_{i \in I} \left(B \cup A_i \right)$$
+\item $$ \left( \bigcup_{i \in I} A_i \right)-B =  \bigcup_{i \in I} \left(A_i -B \right)$$
+\end{enumerate}
+\end{qu}
+
+\newpage
+\section{Turn-in} 
+
+Due February 24, 2017.
+
+%% Stop deleting here.
+
+
+\begin{qu}
+Let $A$ and $B$ be sets in a universe $\U$.
+Prove or disprove: $A \cup B = A\cap B$ if and only if $A=B$.
+
+\end{qu}
+
+%Put your answer to the question here, without the comment.
+% \newpage 
+% Make sure to put your name on the new page
+
+\begin{qu}
+Let $A$, $B$ and $C$ be sets in a universe $\U$. Prove or disprove that
+\begin{enumerate}[label=\alph*)]
+\item $A-B=A\cap \overline{B}$
+\item $A-(B-C)=A\cap (\overline{B} \cup C)$
+\item $A-(B-C)=(A-B)-C$
+\end{enumerate}
+\end{qu}
+
+\begin{qu}
+Let $\U$ be a universal set. Let $A_i \subseteq \U$ be a family of sets with $i \in I$ for some index set $I$.
+\begin{enumerate}[label=\alph*)]
+\item Suppose $B \subseteq A_i$ for every $i \in I$. Prove that $B \subseteq \bigcap_{i \in I} A_i$.
+\item Suppose $A_i \subseteq D$ for every $i \in I$. Prove that $\bigcup_{i \in I} A_i \subseteq D$.
+\end{enumerate}
+\end{qu}
+
+\end{document}
