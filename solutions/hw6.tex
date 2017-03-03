@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, mathpazo,framed, amsthm, amssymb}
+\title{Discrete Math HW \#6}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\let\bicon\leftrightarrow
+\newcommand\tabsmall[1][0.2cm]{\hspace*{#1}}
+
+\author{Dor Rondel}
+
+% Enable SageTeX to run SageMath code right inside this LaTeX file.
+% documentation: http://mirrors.ctan.org/macros/latex/contrib/sagetex/sagetexpackage.pdf
+% \usepackage{sagetex}
+
+\begin{document}
+\maketitle
+\newpage
+Dor Rondel \\
+\begin{enumerate}
+  \setcounter{enumi}{12}
+  \item Prove the generalized DeMorgan Law, or in other words that for any nonempty index set $I$
+$$\overline{\bigcap_{i \in I} A_i} = \bigcup_{i\in I} \overline{A_i}$$ \\
+  \newline
+  Proof: Assume some element $x \in \overline{\bigcap_{i \in I} A_i}$. That means that $x \notin \bigcap_{i \in I} A_i$, which in simple terms means that $x \notin A_i (\forall A_i \in \bigcap_{i \in I} A_i)$. This means the left hand side of the equation represents $\bigcap_{i \in I} A_i$'s complement. If you were to take the union of the complements of $A_i$ you'd be left with the set of everything excluding that which all $A_i$'s share (the set \tabsmall $\bigcap_{i \in I} A_i$). In other words, the same set as $\bigcap_{i \in I} A_i$'s complement. To prove this, if $x \in \overline{\bigcap_{i \in I} A_i}$ that means that $x \notin \bigcap_{i \in I} A_i$. If $x \notin \bigcap_{i \in I} A_i$ that means that $x \in \bigcup_{i\in I} \overline{A_i}$ because if $x$ isn't in $A_i$ then it must be in $A_i$'s complement. So if we were to negate the intersection of all $x \in A_i$ we'd get the union of $x \in \overline{A_i}$. Therefore, $\overline{\bigcap_{i \in I} A_i} = \bigcup_{i\in I} \overline{A_i}$ is true. \qed
+  \newpage
+Dor Rondel \\
+  \item Use induction to prove that for all positive integers $n$,
+$$ \sum_{i=1}^n i(i+1)(i+2) = \frac{n(n+1)(n+2)(n+3)}{4}.$$ \\
+  \newline
+  Proof: We are going to prove the preceding equation by induction. For the base case, let $n=1$. Plugging in the values on both sides we get: 
+\begin{align*}
+\sum_{i=1}^1 1(1+1)(1+2) &= \frac{1(1+1)(1+2)(1+3)}{4} \\
+                         &= \frac{6(4)}{4} \\
+                         &= 6
+\end{align*}
+So the base case is true as both $1(1+1)(1+2)$ and the right hand side expression evaluate to 6, so the base case is proven. Additionally, notice how the $1+3$ was canceled out by the denominator, we will use that fact later. \\
+Assume there exists a $k \in \mathbb{N}$ in which $ \sum_{i=1}^k i(i+1)(i+2) = \frac{k(k+1)(k+2)(k+3)}{4}$, which will serve as our inductive hypothesis. We will prove that $ \sum_{i=1}^{k+1} i(i+1)(i+2) = \frac{(k+1)(k+2)(k+3)(k+4)}{4}$ \\
+\begin{align*}
+     \sum_{i=1}^{k+1} i(i+1)(i+2) &= \frac{(k+1)(k+2)(k+3)(k+4)}{4} \\
+                                  &= \frac{k(k+1)(k+2)(k+3)+4(k+1)(k+2)(k+3)}{4} \\
+                                  &= \frac{k(k+1)(k+2)(k+3)}{4}+\frac{4(k+1)(k+2)(k+3)}{4} \\
+                                  &= \sum_{i=1}^k i(i+1)(i+2) + \sum_{i=1}^1 i(i+1)(i+2) \\  
+\end{align*}
+The leftmost addend from step 3 is equivalent to our inductive hypothesis. Since the 4's cancel out from both the numerator and denominator from the rightmost addend in step three, it's essentially the same as the base case so effectively, the leftmost addend can be viewed as $k$ and the rightmost addend can be viewed as $1$ and adding them proves the case for $k+1$. Thus the equation from the prompt is proven by induction. \qed
+  \newpage
+Dor Rondel \\
+  \item Let $$S_n = \frac{1}{2!} + \frac{2}{3!} + \frac{3}{4!} + \dots + \frac{n}{(n+1)!}.$$
+    \begin{enumerate}
+        \item Evaluate $S_n$ for $n = 1, 2, 3, 4, 5$.
+        \item Propose a simple formula for $S_n$.
+        \item Use induction to prove your conjecture for all integers $n \geq 1$. \\
+    \end{enumerate} 
+    \newline
+    (a) $S_1=\frac{1}{2}$, \tabsmall $S_2=\frac{1}{3}$, \tabsmall $S_3=\frac{1}{8}$, \tabsmall $S_4=\frac{1}{30}$, \tabsmall $S_5=\frac{1}{144}$ \\
+    \newline
+    (b) $$S_n = \sum_{i=1}^n \frac{n}{(n+1)!} = \frac{1}{2!} + \frac{2}{3!} + \frac{3}{4!} + \dots + \frac{n}{(n+1)!}$$ \\
+    \newline
+    (c) Proof: We are going to prove the preciding equation by induction. For the base case let $n=1$ such that $\sum_{i=1}^1 \frac{1}{(1+1)!} = \frac{1}{2!} = \frac{1}{2}$ So our base case is true. \\
+    Assume there exists a $k \in \mathbb{N}$ where $\sum_{i=1}^k \frac{k}{(k+1)!} = \frac{1}{2!} + \frac{2}{3!} + \frac{3}{4!} + \dots + \frac{k}{(k+1)!}$, which will serve as our inductive hypothesis. We will prove that the equation is true for $k+1$ as the delimiter as well. 
+    \begin{align*}
+    \sum_{i=1}^{k+1} \frac{k+1}{(k+2)!} &= \frac{1}{2!} + \frac{2}{3!} + \frac{3}{4!} + \dots + \frac{k}{(k+1)!} + \frac{k+1}{(k+2)!} \\
+                                        &= (\sum_{i=1}^k \frac{k}{(k+1)!}) + \frac{k+1}{(k+2)!} \\
+                                        &= (\sum_{i=1}^k \frac{k}{(k+1)!}) + (\sum_{i=k}^{k+1} \frac{k+1}{(k+2)!}) \\
+    \end{align*}
+    As can be seen, the summation of the formula up to $k+1$ is really the summation up to $k$ added with $\frac{k+1}{(k+2)!}$ which is the definition of the original equation for $S_n$, where the next addend in the series is 1 greater than the previous number in the numerator and the factorial of one greater than the numerator in the denominator. Therefore, the case of $k+1$ abides with the both the original equation and the short-hand sigma notation for it demonstrated by mathmatical induction.
+\end{enumerate}
+\end{document}
