@@ -1,0 +1,204 @@
+\documentclass[12pt]{article}
+\title{Homework 9}
+\author{Dr. Hanusch}  %Put your name on your paper.
+\date{March 27, 2017}
+
+\setlength{\parindent}{0mm}
+\usepackage[left=1.5in, right=1.25in, top=1.25in, bottom=1.25in]{geometry}
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{framed}
+\usepackage{mathrsfs}
+%\usepackage[shortlabels]{enumerate}
+
+\begin{document}
+
+% ----------------------------------------------------------------
+\vfuzz4pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz4pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{qu}[]{Question}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem*{prf}{Proof}
+\numberwithin{equation}{section}
+
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\Zee}{\mathbb Z}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\power}{\mathscr{P}}
+\newcommand{\dv}{\textrm{ div }}
+
+
+% ----------------------------------------------------------------
+
+
+\maketitle
+
+\section{Read}
+
+Sections 5.1-5.7 of Kwong. Complete the hands-on exercises.
+
+%% You can delete this section before typing up your turn-in homework%%
+\section{Boardwork} 
+
+Due March 29, 2017.
+
+%\begin{qu}
+%\NumTabs{3}
+%\begin{inparaenum}[a)]
+%\item $a \in {a}$
+%\tab\item  $\emptyset \in \emptyset$
+%\tab\item $2 \in (2,7)$
+%\tab\item $\sqrt{5} \in (1,3)$
+%\tab\item $|\set{-3, -2, 2, 3}|=4$
+%\tab\item $|\set{x\in \mathbb{Q} | x^2=3 }|=2$
+%\end{inparaenum}
+%\end{qu}
+
+\begin{qu}
+Construct an example of a subset of the real numbers that contains a least element, but is not well-ordered.
+\end{qu}
+
+\begin{qu} For each of the following pairs of integers, find the linear combination that equals to their greatest common divisor.
+\NumTabs{3}
+
+\begin{inparaenum}[a)]
+\item 24, 84
+\tab \item 412, 936
+\tab \item 1122, 6372
+\end{inparaenum}
+\end{qu}
+
+\begin{qu} Let $a$ and $b$ be integers such that $1<a<b$ and $\gcd(a,b)=1$. Prove that $\gcd(a+b,ab)=1$. \end{qu}
+
+\begin{qu} Give any arbitrary positive integers $a$, $b$, and $c$, show that if $a|c$ and $b|c$, then $ab|cd$, where $d=\gcd(a,b)$. \end{qu}
+
+\begin{qu} Use modular arithmetic to show that $5|(n^5 -n)$ for any integer $n$. \end{qu}
+
+\begin{qu} Show that no integer of the form $m^2+1$ is a multiple of $7$. \end{qu}
+
+\begin{qu} Evaluate the following, finding the congruent value in $\Zee_n$. 
+\begin{enumerate}[label=\alph*)]
+\item $12457 \mod 17$
+\item $-3275 \mod 11$
+\item $56^3 \cdot 22 \cdot 17-35\cdot 481 \pmod{9}$
+\item $8^{-1} \pmod{45}$
+\end{enumerate}
+\end{qu}
+
+\begin{qu}
+Let $p$ be an odd prime. Show that $p$ takes the form of either $6k+1$ or $6k+5$. 
+
+\emph{Hint:} First argue why being odd restricts $p$ to the form of $6k+1$, $6k+3$ and $6k+5$. Then argue why $p\ne 6k+3$. 
+\end{qu}
+
+\begin{qu}
+Use modular arithmetic to prove that $5|(3^{3n+1}+2^{n+1})$ for any integer $n\geq 0$.
+\end{qu}
+
+
+\begin{qu}
+Prove that if $a, b, c, n \in \Zee$ with $a,n>0$, and $b\equiv c \pmod{n}$, then $ab\equiv ac\pmod{an}$.
+\end{qu}
+
+\begin{qu}
+For $a, b, n \in \Zee^+$ and $n>1$, prove that $a \equiv b \pmod{n} \implies \gcd(a,n)=\gcd(b,n)$.
+\end{qu}
+
+\begin{qu}
+Which of these are a well-defined function from $\set{1,2,3,4}$ to $\set{1,2,3,4}$? Explain.
+\NumTabs{3}
+
+\begin{inparaenum}[a)]
+\item 
+\begin{tabular}{|c|l|l|l|l|}
+\hline
+$x$ & 1 & 2 & 3 & 4 \\
+\hline
+$f(x)$ & 3 & 4 & 2 & 4\\
+\hline
+\end{tabular}
+\tab \item 
+\begin{tabular}{|c|l|l|l|}
+\hline
+$x$ & 1 & 2 & 3 \\
+\hline
+$f(x)$ & 3 & 4 & 2 \\
+\hline
+\end{tabular}
+\tab \item 
+\begin{tabular}{|c|l|l|l|l|l|}
+\hline
+$x$ & 1 & 2 & 3 & 3 & 4 \\
+\hline
+$f(x)$ & 3 & 4 & 2 & 3& 4\\
+\hline
+\end{tabular}
+\end{inparaenum}
+\end{qu}
+
+\begin{qu}
+Prove or disprove whether these are well-defined functions. 
+\begin{enumerate}[label=\alph*)]
+\item $f: \Real \to \Real$, where $f(x)=\frac{3}{x^2+5}$.
+\item $g: \mathbb{Q} \to \mathbb{Q}$, where $g=\set{(x,y)| x,y \in \mathbb{Q}, x^2+y^2=1}$.
+\end{enumerate}
+\end{qu}
+
+\begin{qu}
+Let $T$ be your family tree that includes your biological mother, your maternal grandmother, your maternal great-grandmother, and so on, and all of their female descendants. Determine which of the following defines a function from $T$ to $T$.
+\begin{enumerate}[label=\alph*)]
+\item $h_1:T \to T$, where $h_1(x)$ is the mother of $x$.
+\item $h_2:T \to T$, where $h_2(x)$ is $x$'s sister.
+\item $h_3:T \to T$, where $h_3(x)$ is the eldest daughter of $x$'s maternal grandmother.
+\end{enumerate}
+\end{qu}
+
+\begin{qu} For each of the following functions, determine the images of the given $x$-values.
+\begin{enumerate}[label=\alph*)]
+\item $k_1: \Zee \to \Zee_7$, $k_1(x)=x \mod 7$, for $x=250$, $x=0$ and $x=-16$.
+\item $k_2: \Zee \to \Zee$, $k_2(x)=\gcd(x, 24)$, for $x=100$, $x=0$ and $x=-21$.
+\end{enumerate}
+\end{qu}
+
+\newpage
+\section{Turn-in} 
+
+Due March 31, 2017.
+
+%% Stop deleting here.
+
+\begin{qu}
+Given any arbitrary positive integers $a$, $b$, and $c$, show that if $a|c$, $b|c$ and $\gcd(a,b)=1$, then $ab|c$.
+\end{qu}
+
+
+%Put your answer to the question here, without the comment.
+% \newpage 
+% Make sure to put your name on the new page
+
+\begin{qu}
+Let $a, b, m, n \in \Zee$ with $m,n >0$. Prove that if $a\equiv b \pmod{n}$ and $m|n$, then $a\equiv b \pmod{m}$.
+\end{qu}
+
+\end{document}

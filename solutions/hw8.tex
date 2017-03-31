@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, mathpazo,framed, amsthm, amssymb}
+\title{Discrete Math HW \#8}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\let\bicon\leftrightarrow
+\newcommand\tabsmall[1][0.2cm]{\hspace*{#1}}
+
+\author{Dor Rondel}
+
+% Enable SageTeX to run SageMath code right inside this LaTeX file.
+% documentation: http://mirrors.ctan.org/macros/latex/contrib/sagetex/sagetexpackage.pdf
+% \usepackage{sagetex}
+
+\begin{document}
+\maketitle
+\newpage
+Dor Rondel \\
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item Let $a, b,$ and $c$ be integers such that $a \ne 0$. Prove that if $a|b$ and $a|c$, then $a|(sb+tc)$ for any integers $s$ and $t$. \\
+\newline
+Proof: Let $a, b, c \in \mathbb{Z}$ such that $a \ne 0$ and $s, t \in \mathbb{Z}$ be chosen arbitrarily. Assume $a|b$ and $a|c$ then by definition, $b = ak$ and $c = aj$ for some specific $k, j \in \mathbb{Z}$. If we multiply $b$ by $s$ we get $sb = sak$. Similarly, if we multiply $c$ by $t$ we get $tc = taj$. We want to prove that $a|(sb+tc)$; therefore,
+\begin{align*}
+sb + tc &= sak + taj \\
+        &= a(sk + tj)
+\end{align*}
+Which is clearly divisible by $a$. Thus, $a|(sb+tc)$ is true. \qed
+\newpage
+Dor Rondel \\
+  \item Let $m$ and $n$ be positive integers. Prove that $\gcd(m, m+n) | n$.\\ 
+  \newline
+  By definition of GCD, the $\gcd(m, m+n)=d \iff d|m$ and $d|(m+n)$ and $\forall e$ if $e|m$ and $e|(m+n)$ then $e<d$. Therefore, let $d \in \mathbb{Z}$ represent the $\gcd(m, m+n)$. We know $d|m$ and $d|(m+n)$ so by definition $m = dk$ and $m+n= dj$ for some specific $j,k \in \mathbb{Z}$. Subtracting $m$ from $m+n$ means that $n=dj-m$. Note: $m$ will be substituted for $dk$ later on.
+\begin{align*}
+n &= dj - m \\
+  &= dj - dk \\
+  &= d(j-k) 
+\end{align*}
+Recall that $d$, which clearly divides $n$ represents the $\gcd(m, m+n)$. Therefore, $\gcd(m, m+n)|n$. \qed
+\newpage
+Dor Rondel \\
+  \item Prove the generalized DeMorgan Law, or in other words that for any nonempty index set $I$
+$$\overline{\bigcap_{i \in I} A_i} = \bigcup_{i\in I} \overline{A_i}$$ \\
+  \newline
+  Proof: We want to prove set equality, so we'll prove that $\overline{\bigcap_{i \in I} A_i} \subseteq \bigcup_{i\in I} \overline{A_i}$ and $\bigcup_{i\in I} \overline{A_i} \subseteq \overline{\bigcap_{i \in I} A_i}$, starting with the former. \\
+  \newline
+  Assume some element $x \in \overline{\bigcap_{i \in I} A_i}$, since $\overline{\bigcap_{i \in I} A_i}$ represents the complement of the intersection of $A_i \forall i \in I$, that means $x \notin A_i \forall i \in I$. $x$ not being part of $A_i \forall i \in I$ means that $x \in \overline{A_i} \forall i \in I$ by definition of a set complement. Saying  $x \in \overline{A_i} \forall i \in I$, which was proven, is essentially the same as saying $x \in \bigcup_{i\in I} \overline{A_i}$ because if $x \in A_i \forall i \in I$, then $x$ will also be part of the union: $\bigcup_{i\in I} \overline{A_i}$ by definition of applying the union operation on sets. Since $x \in \overline{\bigcap_{i \in I} A_i}$ and $\bigcup_{i\in I} \overline{A_i}$, $\overline{\bigcap_{i \in I} A_i} \subseteq \bigcup_{i\in I} \overline{A_i}$ \\
+  \newline
+  To prove that $\bigcup_{i\in I} \overline{A_i} \subseteq \overline{\bigcap_{i \in I} A_i}$, assume $x \in \bigcup_{i\in I} \overline{A_i}$. That implies that $x \in \overline{A_i} \forall i \in I$. $x$ being part of $x \in \overline{A_i} \forall i \in I$ means that $x \notin A_i \forall i \in I$, which is equivalent to saying that $x \notin \bigcap_{i \in I} A_i$ since if $x \notin A_i \forall i \in I$ it won't be in the intersection of $ A_i \forall i \in I$. $x \notin \bigcap_{i \in I} A_i \forall i \in I$ which was proven means that $x \in \overline{\bigcap_{i \in I} A_i} \forall i \in I$ by definition of complementing a set. Since $x \in \bigcup_{i\in I} \overline{A_i}$ and $x \in \overline{\bigcap_{i \in I} A_i} \forall i \in I$, $\bigcup_{i\in I} \overline{A_i} \subseteq \overline{\bigcap_{i \in I} A_i}$. \\
+  \newline
+  In conclusion, since $\overline{\bigcap_{i \in I} A_i} \subseteq \bigcup_{i\in I} \overline{A_i}$ and $\bigcup_{i\in I} \overline{A_i} \subseteq \overline{\bigcap_{i \in I} A_i}$, $\overline{\bigcap_{i \in I} A_i} = \bigcup_{i\in I} \overline{A_i}$ by definition of set equality. \qed
+\end{enumerate}
+\end{document}
