@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, mathpazo,framed, amsthm, amssymb}
+\title{Discrete Math HW \#9}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\let\bicon\leftrightarrow
+\newcommand\tabsmall[1][0.2cm]{\hspace*{#1}}
+
+\author{Dor Rondel}
+
+% Enable SageTeX to run SageMath code right inside this LaTeX file.
+% documentation: http://mirrors.ctan.org/macros/latex/contrib/sagetex/sagetexpackage.pdf
+% \usepackage{sagetex}
+
+\begin{document}
+\maketitle
+\newpage
+Dor Rondel \\
+\begin{enumerate}
+  \setcounter{enumi}{15}
+  \item Given any arbitrary positive integers $a$, $b$, and $c$, show that if $a|c$, $b|c$ and $\gcd(a,b)=1$, then $ab|c$. \\
+  \newline
+  Proof: Assume that given any arbitrary $a,b,c \in \mathbb{N}$, $a|c$, $b|c$ and $\gcd(a,b)=1$. If the $\gcd(a,b)=1$  $\exists s,t \in \mathbb{Z}$ such that $as+bt=1$. Multipliying $c$ by both sides yields: $c(as+bt) = c(1)$. Additionally, going by the definition of divisibility, under the assumption that $a|c$, $b|c$, indicates that $c=aj$ and $c=bk$ for some $j,k \in \mathbb{Z}$. Substituting the different values of $c$ with the equation derived above yields: 
+  \begin{align*}
+  c & = c(as+bt) \\
+    & = cas + cbt \\
+    & = bkas + ajbt \\
+    & = abks + abjt \\
+    & = ab(ks + jt) \\
+  \end{align*}
+ Since in the above equation $ab|c$, that shows that if $a|c$, $b|c$ and $\gcd(a,b)=1$ then $ab|c$. \qed
+ \newpage
+Dor Rondel \\
+  \item Let $a, b, m, n \in \mathbb{Z}$ with $m,n >0$. Prove that if $a\equiv b \pmod{n}$ and $m|n$, then $a\equiv b \pmod{m}$. \\
+  \newline
+  Proof: Assume $a\equiv b \pmod{n}$ and $m|n$. If $a\equiv b \pmod{n}$ that means $n|(a-b)$; which by the definition of divisibility means that $a-b=nk$ for some $k \in \mathbb{Z}$. If $m|n$ then $n=mj$ for some $j \in \mathbb{Z}$ for the same reason. Substituting $mj$ for $n$ in $a-b=nk$ yields $a-b=mjk$. Therefore, $m$ clearly divides $a-b$ and for that reason $a\equiv b \pmod{m}$. In conclusion, if $a\equiv b \pmod{n}$ and $m|n$ for some $a,b,m,n \in \mathbb{Z}$ with $m,n >0$ then $a\equiv b \pmod{m}$. \qed
+ \end{enumerate}
+\end{document}
