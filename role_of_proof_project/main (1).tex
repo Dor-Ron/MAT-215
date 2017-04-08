@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\title{Role of Proof Project}
+\author{Dor Rondel}  %Put your name on your paper.
+\date{Due April 7, 2017}
+
+\setlength{\parindent}{0mm}
+
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\newcommand{\newpar}{\leavevmode{\parindent=1em\indent}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand\tabsmall[1][0.8cm]{\hspace*{#1}}
+\newcommand\tabsmalll[1][0.2cm]{\hspace*{#1}}
+%\usepackage[shortlabels]{enumerate}
+\usepackage{setspace} 
+\doublespacing
+
+\begin{document}
+
+% Enable SageTeX to run SageMath code right inside this LaTeX file.
+% documentation: http://mirrors.ctan.org/macros/latex/contrib/sagetex/sagetexpackage.pdf
+% \usepackage{sagetex}
+
+\begin{document}
+\maketitle
+\newpage
+\huge 2.1 Synopsis \\
+\newline
+\normalsize
+\newpar Michael de Vellier wrote \emph{The Role and Function of Proof in Mathematics} in 1990, to dispute the notion that the sole purpose of mathematical proofs is to provide verification or conviction for theorems. While he does agree that attaining conviction for a formulated theorem is definitely one of the roles of proof in mathematics, he goes on to list four others, of which he claims neither is particularly more important than the other. The four other purposes of proof in mathematics (which will be eleborated on later) include: discovery, communication, systemization, and explanation. \\
+\newpar Verification, the most widely known and accepted role for a mathematical proof, seems like the most logical motivation to write a proof. You write a proof in order to be able to say with absolute certainty that the proposition in question is in fact either true or false. After verifying a proof, there is no doubt left to its correctness; however, in mathematics, often times there is little doubt to begin with. As De Velliers (1990) phrased it, "For what other weird and obscure reasons, would we sometimes spend months or years to prove certain conjectures, if we weren't already convinced of their truth?" (p. 2). Certainly, there must be more roles of proof in mathematics than simply just verification then. \\
+\newpar Indeed there are more roles of proofs in mathematics. For example, proof for the sake of explanation. Often times, a proof will verify a theorem without truly giving any insight as to why it is in fact true. Many times, steps will be skipped as the author will think the reason for his deduction is obvious, but what is obvious to the author is not necessarily obvious to the reader. A proof written for the sake of explanation will give insight and satisfactory explanation to the reader as to why the confirmation established by the proof is in fact true. \\
+\newpage
+\newpar Other motives to write proofs are for the purpose of sytsemization, discovery, and communication. A proof written for the sake of systemization, will emphasize on the connection between unrelated theorems, postulates, corollaries, and even statements to bring light to the connection between the proposition in question to the logical statements mentioned above. The implications of these seemingly unrelated connections can unify different parts of mathematics and hint to applications within and outside the field. Proofs for the sake of discovery attempt to generalize proofs in ways which new mathematical theorems or corollaries can be made, which would probably have not been reached if the generalization of a proof was not attempted. Finally, proofs for the sake of communication are proofs whose primary purpose is to encourage debate between educators, students, and enthusiasts over the validity of the proof, which has many positive ramifications for the mathematical community as a whole. \\
+\newpar De Vellier closes by reaffirming his hypothesis, which is that the traditional notion of proofs being solely for the sake of verification is wrong. He acknowledges that sometimes there will definitely be an overlap between the different roles when an individual is writing a proof. He demands that educational reform take place, to better illustrate the true essence of mathematics. A way to accomplish this in classes in which proofs are presented, would be to emphasize the other motives which mathematicians have for writing proofs, namely for systemization, discovery, communication, and explanation along with verification.
+\newpage
+\huge 2.2 Proofs \\
+\Large
+$$Theorom: (p \implies q) \land (p \implies \overline{q}) \equiv \overline{p} $$ \\
+\normalsize
+Proof: We will show that the antecedent and the conclusion are logically equivalent by an array of boolean algebraic manipulations of the antecedent: \\ 
+\begin{align*}
+(p \implies q) \land (p \implies \overline{q}) &  \equiv (\overline{p} \lor q) \land (\overline{p} \lor \overline{q}) \tabsmall\tabsmall\tabsmall\tabsmall Implication\tabsmalll as\tabsmalll Disjunction \\
+             & \equiv \overline{p} \lor (q \land \overline{q}) \tabsmall\tabsmall\tabsmall\tabsmall\tabsmall\tabsmalll Distributive\tabsmalll Law \\
+             & \equiv \overline{p} \lor F \tabsmall\tabsmall\tabsmall\tabsmall\tabsmall\tabsmall\tabsmalll Inverse\tabsmalll Law \\
+             & \equiv \overline{p} \tabsmall\tabsmall\tabsmall\tabsmall\tabsmall\tabsmall\tabsmall\tabsmalll Identity\tabsmalll Law \\
+\end{align*}
+As we've seen, the antecedent can be algebraically manipulated to be exactly identical to the consequence; therefore, the antecedent and the consequence are in fact logically equivalent.
+\newpage
+Proof: To prove that $(p \implies q) \land (p \implies \overline{q}) \equiv \overline{p}$ we will make use of a proof table: \\
+\begin{center}
+ \begin{tabular}{||c c c c c c c||} 
+ \hline
+ p & q & \overline{q} & p \implies q & p \implies \overline{q} & (p \implies q) \land (p \implies \overline{q}) & \overline{p} \\ [0.5ex] 
+ \hline\hline
+ T & T & F & T & F & F & F \\ 
+ \hline
+ T & F & T & F & T & F & F \\
+ \hline
+ F & T & F & T & T & T & T \\
+ \hline
+ F & F & T & T & T & T & T \\
+ \hline
+\end{tabular}
+\end{center} \\
+As can be seen, the last two columns represent the antecedent and the consequence respectively; therefore, they are logically equivalent.
+\newpage
+Proof: To prove that $(p \implies q) \land (p \implies \overline{q}) \equiv \overline{p}$ we'll proceed by using a logical argument. \\
+By the laws of logical conjunction, both operands must be logically equivalent to true in order for their conjunction to be true. Therefore, for  $(p \implies q) \land (p \implies \overline{q})$ to be essentially true, both the implication on the left of the conjunction operator and the implication on the right of the conjunction operator must true in order for their conjunction to be true. By the laws of logical implications, whenever an antecedent is evaluable as false, the implication as a whole is equivalent to true regardless of the boolean value held by the consequence. So, in the scenarios where $p=F$, the individual implications evaluate to true, and so does their conjunction. Similarly, when $p=F$, then $\overline{p}=T$. Which means that when $p=F$ both the antecedent and the consequence of the theorom we're trying to prove are logically equal to true. For the cases where $p=T$, by the laws of logical implications, the operand to the left of the conjunction operator in the antecedent would be true, but the right operand would be false since it'd be of form "true implies false" assuming $q=True$ and $\overline{q}=False$. Conjoining true and false leads to a false value, which when $p=True$ then $\overline{p}=False$. Since for all possible values of $p,q$, $(p \implies q) \land (p \implies \overline{q})$ takes on the same value as $\overline{p}$, it's fair to say that the antecedent is logically equivalent to the consequence and that the theorem we're trying to prove as a whole is true. 
+\newpage
+\huge 2.3 Explanation \\
+\normalsize 
+\newline
+\newpar We proved that $(p \implies q) \land (p \implies \overline{q}) \equiv \overline{p}$ in three different ways. The first way was by boolean algebraic manipulation. The second way utilized what philosophers and mathematicians would refer to as a truth table. And the third way verbally made a logical argument as to why the proposed theorem is in fact true. \\
+\newpar The first proof was motivated by the systemization role of proof. In the proof we brought together different axioms within the field of boolean algebra to come up with our own corollary. Namely, the proof utilized the implication as disjunction law, distributive law, inverse law, and the identity law. This in fact was an example of local systemization. On the downside, it might not be obvious to someone with no knowledge in boolean algebra as to why it's true. \\
+\newpar In the second proof, we proved the theorem by utilizing a truth table. This was motivated by the verification role of proof. It listed out all possible permutations of the possible states the variables $p,q$ could take in the theorem, and established with absolute certainty that the antecedent and the consequence were logically equivalent in all possible scenarios, effectively removing any doubt of the correctness of the theorem. \\
+\newpar Finally, the last proof of the theorem was a verbal argument meant to be understood by almost any reader regardless of their background in mathematics. This is to say that is was in fact inspired by the role of proof as a means of explanation. Instead of emphasizing the connection between axioms or the absolute conviction of the theorem, the last proof greatly focused on explaining the steps of the proof so that anyone reading it would be logically satisfied with the conclusion reached.
+\newpage
+\huge Reference: 
+\normalsize
+\newline
+\begin{itemize}
+  \item De Vellier, M. (1990). The Role and Function of Proof in Mathematics.  University of Stellbosch.
+\end{itemize}
+\end{document}
