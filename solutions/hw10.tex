@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, mathpazo,framed, amsthm, amssymb}
+\title{Discrete Math HW \#10}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\let\bicon\leftrightarrow
+\newcommand\tabsmall[1][0.2cm]{\hspace*{#1}}
+
+\author{Dor Rondel}
+
+% Enable SageTeX to run SageMath code right inside this LaTeX file.
+% documentation: http://mirrors.ctan.org/macros/latex/contrib/sagetex/sagetexpackage.pdf
+% \usepackage{sagetex}
+
+\begin{document}
+\maketitle
+\newpage
+Dor Rondel \\
+\begin{enumerate}
+  \setcounter{enumi}{16}
+  \item Let $f: \mathbb{Z} \times \mathbb{Z}^\ast \to \mathbb{Q}$ be defined as $f(a,b)=a/b$.
+\begin{enumerate}
+\item Prove that $f$ is a well-defined function.
+\item Prove or disprove that $f$ is injective.
+\item Prove or disprove that $f$ is surjective.
+\end{enumerate} \\
+\newline
+Proof (a): We will prove that function $f: \mathbb{Z} \times \mathbb{Z}^\ast \to \mathbb{Q}$ where $f(a,b)=a/b$ is a well-defined function. Let $x \in \mathbb{Z}$ and $y \in \mathbb{Z}^\ast$ be arbitrary integers. Then $\forall x,y \in \mathbb{Z} \times \mathbb{Z}^\ast, f(x,y)= x/y$  where $x/y$ is a unique fraction within $\mathbb{Q}$, as a fraction between 2 non-zero integers would be in the set of rational numbers. Since all paired-values within the domain are mapped to a exactly one unique fraction within the codomain $f$ can be said to be a well-defined function. \qed \\
+\newline
+Proof (b): We will prove that $f$ is not injective by counterexample. Let $x_1 = 2, y_1 = 4$ and let $x_2 = 3, y_2 = 6$. Then it can be said that, $x_1,x_2,y_1,y_2 \in \mathbb{Z} \times \mathbb{Z}^\ast$. Following $f$'s definition, $f(x_1,y_1)=x_1/y_1=2/4=1/2$. Similarly, $f(x_2,y_2)=x_2/y_2=3/6=1/2$. Since the pair $(x_1,y_1) \neq (x_2,y_2)$ but $f(x_1,y_1) = f(x_2,y_2)$ It can be said that the function $f$ is not injective. \qed \\
+\newline
+Proof (c): We will prove that function $f$ is surjective by proving that every element in the image of $f$ is also in its codomain. Let $x,y$ be arbitrary variables in $f$'s domain. Then by definition of $f$, the image of $f$ is the set containing $\forall x,y \in \mathbb{Z} \times \mathbb{Z}^\ast | f(a,b)=a/b$. Following the definition of the set of rational numbers ($f$'s codomain), $\mathbb{Q} = \{ a/b : a,b \in \mathbb{Z}, b \neq 0 \}$. Since the domain for the image of $f$ and $\mathbb{Q}$ are the same, and the range of the image of $f$ is equivalent to its codomain $\mathbb{Q}$ since they share the same definition, it can be said that $f$ is surjective. \qed \\
+\newpage
+\newpage
+Dor Rondel \\
+\item Let $f:A \to B$ and let $X \subseteq A$ and $U \subseteq B$. Prove that $f(X) \subseteq U$ if and only if $X\subseteq f^{-1}(U)$ \\
+\newline
+Proof: In order to prove a biconditional statement, we will first prove that if $f(X) \subseteq U$ then $X\subseteq f^{-1}(U)$. Followed by proving that if $X\subseteq f^{-1}(U)$ then $f(X) \subseteq U$. Beginning with the former: \\
+\newline
+Assume $f(X) \subseteq U$, then $\forall x \in X, \exists u \in U$ such that $f(x) = u$ by the definition of an image of a function over a set. Since $f(x) = u$, then by definition of an inverse function, $\exists u \in U, \exists x \in X$ such that $f^{-1}(u) = x$. We can say that the preceding statement is true for elements of U which are equivalent to $f(x)$ for some $x \in X$. Since $\forall x \in X$, x is also in $f^{-1}(U)$, we can conclude that $X \subseteq f^{-1}(U)$ \\
+\newline
+Assume $X \subseteq f^{-1}(U)$, then we can say that all elements of X are in $f^{-1}(U)$. Additionally, $\exists u \in U, f^{-1}(u) = x \iff u = f(x)$ by definition of an inverse function. Since $f^{-1}(u) = x \iff u = f(x)$, we can conclue that for every $u$ in which the inverse function $f^{-1}(u) = x$, there exists an $f(x)$ which is equal to u. Since all element of X are in $f^{-1}(U)$, by the inverse function, $f^{-1}(u) = x$ for all values of u which are equivalent to $f(x)$. Since $\forall u \in U$ where $f(x)=u$ the inverse function is defined, we can say that $f(X) \subseteq U$, since $\forall f(x) \exists u \in U$ where $f(x) = u$.\\
+\newline
+Since $f(X) \subseteq U$ implies $X\subseteq f^{-1}(U)$ and $X\subseteq f^{-1}(U)$ implies $f(X) \subseteq U$ we can conclude that $f(X) \subseteq U$ if and only if $X\subseteq f^{-1}(U)$. \qed
+\newpage
+Dor Rondel \\
+\item Suppose $f:A \to B$ and $g: B \to C$ are functions. Prove that if both $g$ and $g\circ f$ are one-to-one, then $f$ is also one-to-one. \\
+\newline
+Proof: Assume $g$ and $g\circ f$ are injective functions, that means that $\forall x,y \in A$, if $(g \circ f)(x) = (g \circ f)(y)$ then $x=y$. Since we know that if $g(f(x)) = g(f(y)), x=y$ by the assumption that $g\circ f$ is injective, we can proceed to say that $f(x)=f(y)$ since $g$ is also injective. Since we know that $x=y$ and that $f(x)=f(y)$ for all $x,y \in A$ we can say that function $f$ is injective as well. \qed
+\end{document}
