@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, mathpazo,framed, amsthm, amssymb}
+\title{Discrete Math HW \#10}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\let\bicon\leftrightarrow
+\newcommand\tabsmall[1][0.2cm]{\hspace*{#1}}
+
+\author{Dor Rondel}
+
+% Enable SageTeX to run SageMath code right inside this LaTeX file.
+% documentation: http://mirrors.ctan.org/macros/latex/contrib/sagetex/sagetexpackage.pdf
+% \usepackage{sagetex}
+
+\begin{document}
+\maketitle
+\newpage
+Dor Rondel \\
+\begin{enumerate}
+  \setcounter{enumi}{15}
+  \item For the relation $V=\set{(x,y) \mid xy>0}$ on $\mathbb{Z}$, prove or disprove that $V$ is reflexive, irreflexive, symmetric, antisymmetric and transitive. \\
+\newline
+Proof: The relation V is not reflexive because if $x = 2$ and $y = 3$, $xy=6$ and $6$ is greater than 0. So the pair $(2,3) \in V$ but since $2 \neq 3$, V is not reflexive. \\
+\newline
+The relation V is not irreflexive, because for the value pair $(1,1)$, 1 times itself is greater than 0 and $1 \in \mathbb{Z}$ so $(1,1) \in V$ but since $1=1$, the relation V is not irreflexive. \\
+\newline
+The relation V is symmetric, because $\forall x,y \in \mathbb{Z}, xy > 0 \implies yx > 0$ by the commutative property of multiplication. \\
+\newline
+The relation V is not antisymmetric, because $(2,3) \in V$ and $(3,2) \in V$ as previously proved, but $2 \neq 3$. \\
+\newline
+$x,y$ can either both be negative, or both me positive, and still be in V because if their parity was different, their product would always be negative and not found in relation V. In the case where $x,y < 0$, if $xy > 0$ and $yz > 0$ then surely $xz > 0$. A similar argument can be used for when $x,y,z > 0$. Since $xVy$ and $yVx \implies xVz \forall x,y,z \in \mathbb{Z}$, V is transitive. \qed
+\newpage
+Dor Rondel \\
+  \item Prove Theorem 7.3.1. If $\sim$ is an equivalence relation on $A$, then $a \sim b \iff [a] = [b]$. \\
+  \newline
+  Proof: To prove that, $a \sim b \implies [a] = [b]$. Let $a,b \in A$, $a \sim b$, and $x \in [a]$. By definition of equivalence classes, $a \sim x$. Since we're told $\sim$ is an equivalence relation, that means its reflexive, symmetric, and transitive. By symmetry, $a \sim b \implies b \sim a$, and we assumed $a \sim x$. So by transitivity, $b \sim a$ and $a \sim x \implies b \sim x$ and therefore $x \in [b]$. So it can be said that $x \in [a] \imples x \in [b]$. For the same reasons, $x \in [b] \implies x \in [a]$, as:
+  \begin{align*}
+  x \in [b] & \implies b \sim x \\
+            & \implies a \sim x \\
+            & \implies x \in [a]
+  \end{align*} \\
+  Since $x \in [b] \iff x \in [a]$, we can say $[a]=[b]$ derived from $a \sim b$. \\
+  \newline
+  To prove that $[a] = [b] \iff a \sim b$, let $x \in [a]$ by definition of the equivalence class, $a \sim x$ and assume $x \in [b]$, so $b \sim x$. Since $\sim$ is reflexive, $a=x=b$ and given $a \sim x$ from $x \in [a]$, we can substitute b for x such that $[a] = [b] \implies a \sim b$. \qed
+  \newpage
+Dor Rondel \\
+  \item Let $A=\{x \in \mathbb{N} \mid 2\leq x \leq 100\}$. For $p$ a prime number let $A_p = \{a \in A \mid p \textrm{ is the smallest prime that divides } a \}$. Note you proved these form a partition on $A$ in Question 15. 
+
+Define a relation $\sim$ on $A$, such that $a \sim b$ is $a \in A_p$ and $b \in A_p$ for some prime $p$. Prove that $\sim$ is an equivalence relation. \\
+\newline
+Proof: By the fundamental theorem of arithmetic, any number in the given range can be described as the product of certain prime numbers if it isn't prime itself. Let $a,b \in A$, Let $P_1$ be the set of prime numbers that when multiplied yield $a$ and let $P_2$ be the set of prime numbers that when multiplied yield $b$. The relation $\sim$ then can be described as saying that $a \sim b \implies min(p_1) = min(P_2)$, note that $min(P_1)$ and $min(P_2)$ must equal the prime subscript of the partition $a,b$ are part of. Therefore, the relation  $a \sim b \implies a \in A_p$ and $b \in A_p \forall a,b \in [2,100]$. \\
+\newline
+I don't however see how $\sim$ can be an equivalence relation, as $4 \sim 6$, $4,6 \in [2,100]$, and $4,6 \in A_2$ but $4 \neq 6$ so $\sim$ can't be reflexive and hence not an equivalence relation. \qed
+\newline
+\end{document}
