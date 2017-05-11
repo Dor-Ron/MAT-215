@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+\title{Final Portfolio}
+\author{Dr. Hanusch}  %Put your name on your paper.
+\date{Due May 5, 2017 by 3pm}
+
+\setlength{\parindent}{0mm}
+
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+%\usepackage[shortlabels]{enumerate}
+\usepackage{setspace} 
+\doublespacing
+
+\begin{document}
+
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{qu}[]{Question}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{prf}[]{Proof}
+\numberwithin{equation}{section}
+
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+
+% ----------------------------------------------------------------
+
+
+\maketitle
+
+The purpose of this portfolio is to give a snapshot of your knowledge of proof writing. The portfolio should highlight your strengths and illustrate growth over time. This project has three components. Please turn all three components in order, and clearly label each component.
+
+\section{Demonstrating Growth}
+
+To demonstrate growth during the semester choose one of the following statements:
+\begin{enumerate}
+\item Show that given any rational number $x$, and any positive integer $k$, there exists an integer $y$ such that $x^k y$ is an integer.
+\item Prove that $n$ is even if and only if $n^2$ is even.
+\end{enumerate}
+
+You have proven both of these statements before: either for Homework 3 or Exam 1 (or both). Rewrite your proof, with a target audience of next semester's MAT 215 students at the beginning of the semester.
+
+Include: \begin{itemize}\item your new proof \item all drafts of your proof \item any comments your have received from your proof, including a photocopy of the page from your test, if appropriate, and
+
+\item  a paragraph that describes how you have grown as a proof writer since the beginning of the semester. \end{itemize}
+
+
+
+\section{Demonstrating Breadth} 
+To demonstrate breadth of knowledge: 
+\begin{itemize} \item Write three proofs demonstrating three different techniques of proof. Techniques of proof include, direct proof, proof by cases, proof by contradiction, induction, etc. Choose proofs that demonstrate your best work.
+
+\item You only need to submit the final version of these proofs. 
+
+\item Two questions may be from any source, but one of the questions should NOT be a turn-in problem. This third problem may come from the board work, the hands-on exercises, or the other questions from the text. Make sure it is a question that requires proof, not just calculation.
+
+\item Label each proof with its technique.
+
+\item The audience for these proofs are your peers. 
+
+\item I strongly recommend that you revise all three proofs before turning them in.
+
+\item Write a paragraph or two that explains why you think these three proofs illustrate both your best work, and the breadth of your knowledge of proof writing.
+
+\end{itemize}
+\section{Personal Reflection}
+Write a one to two page reflection on the evolution of your knowledge of proof writing during this course. You \emph{must} discuss your strengths as a proof writer, and areas where you could continue to grow. Additionally, some things you \emph{might} also choose to address are 
+\begin{itemize}
+\item Your perception of the role of proof in mathematics or computer science.
+\item Your perception of what qualifies as a proof.
+\item What it means for a proof to be `good'.
+\end{itemize}
+
+\section{Rubric}
+
+\begin{tabular}{|p{4in}|p{1.25in}||p{1.05in}|}
+\hline
+Component & Maximum Score & Your Score \\
+\hline
+Demonstration of growth &  &  \\
+\hspace{0.25in} Rewritten proof is valid. & 10 points &\underline{\hspace{1in}}\\
+\hspace{0.25in} Rewritten proof is readable to a new prover. & 5 points &\underline{\hspace{1in}}\\
+\hspace{0.25in} Previous drafts and comments included. & 2 points & \underline{\hspace{1in}}\\
+\hspace{0.25in} Reflective paragraph. & 5 points & \underline{\hspace{1in}}\\
+\hline
+Demonstration of breadth & & \\
+\hspace{0.25in} Proof 1 is valid.  & 10 points &\underline{\hspace{1in}}\\
+\hspace{0.25in} Proof 1 is readable to a student.  & 5 points &\underline{\hspace{1in}}\\
+\hspace{0.25in} Proof 2 is valid.  & 10 points &\underline{\hspace{1in}}\\
+\hspace{0.25in} Proof 2 is readable to a student. & 5 points &\underline{\hspace{1in}}\\
+\hspace{0.25in} Proof 3 is valid.  & 10 points &\underline{\hspace{1in}}\\
+\hspace{0.25in} Proof 3 is readable to a student. & 5 points &\underline{\hspace{1in}}\\
+\hspace{0.25in} Each proof uses a different technique.  & 3 points &\underline{\hspace{1in}}\\
+\hspace{0.25in} One question was not a turn-in problem. & 2 points & \underline{\hspace{1in}}\\
+\hspace{0.25in} Reflective paragraph  & 5 points &\underline{\hspace{1in}}\\
+
+\hline
+Personal reflection & & \\
+\hspace{0.25in} You wrote an appropriate reflection. & 15 points &\underline{\hspace{1in}}\\
+\hspace{0.25in} Grammar and language in the whole project. & 8 points & \underline{\hspace{1in}}\\
+\hline
+
+Total  & 100 points &\underline{\hspace{1in}}\\
+\hline
+\end{tabular}
+
+
+
+
+
+\end{document}
